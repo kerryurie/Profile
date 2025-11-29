@@ -1,14 +1,209 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head> 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3 Key Takeaways for Home Network Security</title>
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --modem:#ef4444;
+      --wifi:#9d0bff;
+      --switch:#0ea5a0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#fff);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+    }
+
+    .container{
+      width:100%;
+      max-width:900px;
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 8px 30px rgba(15,23,42,0.08);
+      padding:28px;
+      box-sizing:border-box;
+      border:1px solid rgba(15,23,42,0.04);
+    }
+
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    
+    h1{font-size:20px;margin:0}
+
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+      margin-top:20px;
+    }
+
+    .card{
+      background:linear-gradient(180deg,#ffffff, #fcfeff);
+      border-radius:10px;
+      padding:16px;
+      box-shadow:0 6px 18px rgba(15,23,42,0.04);
+      border:1px solid rgba(15,23,42,0.03);
+      min-height:140px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .card .title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:600;
+      font-size:15px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 8px;
+      border-radius:8px;
+      font-weight:600;
+      font-size:13px;
+      color:white;
+    }
+    .badge--modem{ background:linear-gradient(90deg,var(--modem),#ff8a8a) }
+    .badge--wifi{ background:linear-gradient(90deg,var(--wifi),#9466ff) }
+    .badge--switch{ background:linear-gradient(90deg,var(--switch),#6ee7b7) }
+
+    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+
+    .actions{
+      margin-top:20px;
+      display:flex;
+      gap:10px;
+      justify-content:flex-end;
+    }
+    .btn{
+      border:0;
+      padding:10px 14px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:14px;
+    }
+    .btn--primary{ background:var(--accent); color:white }
+    .btn--outline{ background:transparent; border:1px solid rgba(15,23,42,0.06) }
+
+    footer{margin-top:18px;color:var(--muted);
+        font-size:13px;display:flex;
+        justify-content:space-between;
+        align-items:center
+    }
+    
+    h5 {color:var(--muted);font-size:14px}
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px; 
+    }
+
+    a.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ffa500;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    }
+    a.button:hover {
+    background-color: #e68a00;
+    }
+
+  </style>
+</head>
+
 <body>
-    In development....
+  <div class="container" role="main">
+    <header>
+      <div> 
+        <h1 id="title"> 3 Key Tips for Home Network Security</h1>
+        <p class="lead">Top takeaways from 12-hour training to increase security</p>
+      </div>
+    </header>
+
+    <section class="grid" >
+      <article class="card">
+        <div class="title">
+          <span class="badge badge--modem">1</span>
+          <span id="m1">Secure the Modem </span>
+        </div>
+        <p>
+          Ensure the modem's administrative login is changed from the factory default to a strong, 
+          unique password. Disable any vendor remote-login features you do not need and keep modem 
+          firmware updated to reduce the attack surface at your network edge.
+        </p>
+        <p><strong>Quick wins:</strong> change default password, disable remote admin, enable auto-updates 
+            (if available).</p>
+      </article>
+
+      <article class="card">
+        <div class="title">
+          <span class="badge badge--wifi" >2</span>
+          <span id="m2">Wi-Fi Segmentation</span>
+        </div>
+        <p>
+          Create seperate networks for trusted devices (primary) Wi-Fi network and guest or IoT devices on 
+          separate network(s). This prevents less-secure gadgets from reaching sensitive systems.
+        </p>
+        <p><strong>Quick wins:</strong> create separate SSIDs (Primary vs Guest/IoT) and use highest sercurity 
+            protocol possible (e.g. WPA3) </p>
+      </article>
+
+      <article class="card">
+        <div class="title">
+          <span class="badge badge--switch">3</span>
+          <span id="m3">Port & Traffic Isolation</span>
+        </div>
+        <p>
+          Consider upgrading unmanaged switch to a managed switch. Use VLANs to map subnets (e.g. 10=Work, 20=Home, 30=Shared, 40=IoT) and port isolation to separate 
+          traffic (Work / Home / Shared / IoT) and isolate ports.
+        </p>
+        <p><strong>Recommendation:</strong> Learn about upgrading to a managed switch if using unmanaged switch.</p>
+      </article>
+
+    </section>
+    
+    <image>
+        <h5>Example of possible network:</h5>
+         <img src="./Pictures/Home Network Improvements.jpg" alt "Overview of home network digram">
+    </image>   
+    
+    <footer>
+      <div>Network security training taken Oct 2024, updated Nov 2025</div>
+      <a href="index.html" class="button">Back to Profile</a>
+
+    </footer>
+  </div>
+
 </body>
 
-<a href="index.html" class="button">Back to Profile</a>
 
 </html>
